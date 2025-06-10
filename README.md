@@ -1,58 +1,83 @@
-# 🖥️ RDS Starter Kit – PowerShell CLI
+# 👋 Salut, moi c’est ton RDS Starter Kit
 
-Ce dépôt contient un ensemble de scripts PowerShell pour déployer rapidement un environnement Remote Desktop Services (RDS) complet sur Microsoft Azure.  
-Idéal pour les démos, les tests ou les formations techniques.
+Tu veux déployer un environnement Remote Desktop Services (RDS) complet sur Azure **sans galérer** ?  
+Ce repo est là pour toi 
 
+---
 
+##  L’objectif
 
-## 📌 Ce que ce kit installe
+T’aider à provisionner en quelques minutes une infra RDS fonctionnelle, claire, testable… sans passer ta nuit dans la doc Microsoft.
 
-Le script `deploy-infra.ps1` vous permet de créer automatiquement les composants suivants :
+Avec ce kit, tu vas :
 
-- 1x Domain Controller (`A2i.local`)
-- 2x RD Session Hosts
-- 1x RD Connection Broker
-- 1x RD Web Access
-- 1x RD Gateway
-- Création d’une collection nommée **A2i App Store**
-- Publication des RemoteApps suivantes :
-  - `cmd.exe`
-  - `powershell.exe`
+ Créer 6 machines virtuelles automatiquement  
+ Monter ton propre domaine Active Directory (`A2i.local`)  
+ Déployer les rôles RDS principaux (Broker, Web, Gateway, Session Hosts)  
+Créer une collection `"A2i App Store"`  
+ Publier deux RemoteApps de test (`cmd.exe` et `powershell.exe`)  
+ Et tout ça, **en ligne de commande**, à ton rythme.
 
-Toutes les VM sont jointes au domaine Active Directory déployé.
+---
 
-**Convention de nommage** :  
-Toutes les ressources Azure commencent par `a2i-webinar-demo-`  
+##  Ce que tu trouveras ici
+
+ Un dossier `cli/` avec tous les scripts PowerShell prêts à l’emploi  
+ Une structure claire, modulaire, que tu peux adapter à ton projet  
+ Un schéma d’archi (si tu veux visualiser ce que tu installes)   Une convention de nommage standardisée :  
+Toutes les ressources Azure commencent par : `a2i-webinar-demo-<truc>`  
 Exemples :  
 - `a2i-webinar-demo-rg001`  
-- `a2i-webinar-demo-dc001`  
-- `a2i-webinar-demo-vnet001`
+- `a2i-webinar-demo-dc001`
 
+---
 
-## 🧰 Prérequis
-
-Avant de commencer, assurez-vous d’avoir :
-
-- PowerShell 7 ou plus
-- Azure CLI (v2.45 ou supérieur)
-- Un abonnement Azure actif avec les droits `Contributeur`
-
-
-
-## 🚀 Comment l’utiliser
-
-Depuis PowerShell :
+##  Comment l’utiliser (promis, c’est pas sorcier)
 
 ```powershell
-# Connexion à Azure
+# 1. Connexion à Azure
 az login
-az account set --subscription "<ID de votre abonnement>"
+az account set --subscription "<ID de ton abonnement>"
 
-# Déploiement de l’infrastructure
+# 2. Déploiement complet
 .\cli\deploy-infra.ps1 -Location "westeurope" -Prefix "a2i-webinar-demo"
 
-# Joindre les VMs au domaine
+# 3. Intégration des VMs au domaine
 .\cli\join-domain.ps1
 
-# Publier les RemoteApps
+# 4. Publication des RemoteApps
 .\cli\publish-remoteapps.ps1 -CollectionName "A2i App Store"
+🖼 À quoi ça ressemble ?
+📷 Un schéma vaut mieux qu’un long discours :
+
+
+ Pour qui c’est fait ?
+Pour les pros qui en ont marre de :
+
+ passer 3 heures à cliquer dans le portail
+ chercher des tutos qui datent de 2016
+ tomber sur 48 lignes d’erreurs PowerShell sans explication
+
+Ici, tu suis les étapes, tu comprends ce que tu fais, tu as un résultat.
+
+ Ce que tu peux faire après
+Tu veux aller plus loin ?
+
+Ajouter ton propre certificat ?
+
+Remplacer les RemoteApps par une app métier ?
+
+Intégrer ça dans un pipeline DevOps ?
+➡️ Les bases sont là. Tu n’as plus qu’à adapter.
+
+Licence
+Ce projet est sous licence MIT. Tu peux l’utiliser, l’adapter, le partager.
+(Si tu l’améliores, pense à la communauté )
+
+Une question ? Une idée ?  
+Les issues sont ouvertes, les pull requests sont bienvenues.
+On est là pour apprendre ensemble, pas pour jouer au cowboy en solo 
+
+RDS, c’est chiant quand c’est mal fait. Mais avec un bon starter kit, c’est fluide, propre et efficace.
+
+Bon déploiement 🚀
