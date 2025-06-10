@@ -11,10 +11,10 @@ T’aider à provisionner en quelques minutes une infra RDS fonctionnelle, clair
 
 Avec ce kit, tu vas :
 
- Créer 6 machines virtuelles automatiquement  
- Monter ton propre domaine Active Directory (`A2i.local`)  
- Déployer les rôles RDS principaux (Broker, Web, Gateway, Session Hosts)  
-Créer une collection `"A2i App Store"`  
+ Créer 6 machines virtuelles automatiquement.
+ Monter ton propre domaine Active Directory (`A2i.local`). 
+ Déployer les rôles RDS principaux (Broker, Web, Gateway, Session Hosts).
+ Créer une collection `"A2i App Store"`  
  Publier deux RemoteApps de test (`cmd.exe` et `powershell.exe`)  
  Et tout ça, **en ligne de commande**, à ton rythme.
 
@@ -22,8 +22,8 @@ Créer une collection `"A2i App Store"`
 
 ##  Ce que tu trouveras ici
 
- Un dossier `cli/` avec tous les scripts PowerShell prêts à l’emploi  
- Une structure claire, modulaire, que tu peux adapter à ton projet  
+ Un dossier `cli/` avec tous les scripts PowerShell prêts à l’emploi.  
+ Une structure claire, modulaire, que tu peux adapter à ton projet.  
  Un schéma d’archi (si tu veux visualiser ce que tu installes)   Une convention de nommage standardisée :  
 Toutes les ressources Azure commencent par : `a2i-webinar-demo-<truc>`  
 Exemples :  
