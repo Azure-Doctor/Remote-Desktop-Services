@@ -3,7 +3,7 @@
 Ce dépôt contient un ensemble de scripts PowerShell pour déployer rapidement un environnement Remote Desktop Services (RDS) complet sur Microsoft Azure.  
 Idéal pour les démos, les tests ou les formations techniques.
 
----
+
 
 ## 📌 Ce que ce kit installe
 
@@ -28,7 +28,6 @@ Exemples :
 - `a2i-webinar-demo-dc001`  
 - `a2i-webinar-demo-vnet001`
 
----
 
 ## 🧰 Prérequis
 
@@ -38,7 +37,7 @@ Avant de commencer, assurez-vous d’avoir :
 - Azure CLI (v2.45 ou supérieur)
 - Un abonnement Azure actif avec les droits `Contributeur`
 
----
+
 
 ## 🚀 Comment l’utiliser
 
